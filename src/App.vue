@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Multiselect></Multiselect>
+    {{ users }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Multiselect from './components/Multiselect/Multiselect.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    Multiselect,
+  },
+  computed: {
+    users() {
+      return this.$store.state.users.users;
+    },
+  },
+  mounted() {
+    this.$store.dispatch('get:users');
   },
 };
 </script>
