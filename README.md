@@ -31,7 +31,7 @@
 
 #### BONUS
 
-- Handle an object edition vai a new page or component
+- Handle an object edition via a new page or component
 
 ### Resources
 
