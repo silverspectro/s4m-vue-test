@@ -13,7 +13,7 @@
 - It should filter the list it is given by the input of the user (key: name|label)
 - It should be able to select with the `Enter` key
 
-- It should use the (Vuex)[https://vuex.vuejs.org/guide/] store to handle the data
+- It should use the [https://vuex.vuejs.org/guide/](Vuex) store to handle the data
 
 ### How to interact with this repo
 
@@ -35,6 +35,6 @@
 
 ### Resources
 
-(Easy fake data server)[https://jsonplaceholder.typicode.com/]
-(Vuex)[https://vuex.vuejs.org/guide/]
-(Vue)[https://vuejs.org/]
+- [https://jsonplaceholder.typicode.com/](fake-data-server)
+- [https://vuex.vuejs.org/guide/](Vuex)
+- [https://vuejs.org/](Vue)
