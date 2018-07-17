@@ -1,5 +1,88 @@
+
+$multiselect-input-height: 2rem;
+$multiselect-input-radius: 4px;
+$multiselect-input-border: 1px solid #ddd;
+$multiselect-input-padding: 0 10px;
+
+$multiselect-input-font-size: 1.4rem;
+$multiselect-input-font-weight: 300;
+$multiselect-input-font-color: #aaa;
+$multiselect-input-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+$green : #42b983;
+$gray: #f0f0f0;
+$white: #fff;
+
+
 .multiselect {
-  &__input {
-    
-  }
+    position: relative;
+
+    &__input {
+        width: 100%;
+        height: $multiselect-input-height;
+        padding: $multiselect-input-padding;
+
+        border-radius: $multiselect-input-radius;
+        border: $multiselect-input-border;
+
+        font-size: $multiselect-input-font-size;
+        color: $multiselect-input-font-color;
+        font-family: $multiselect-input-font-family;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    &__content-wrapper{
+        position: absolute;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        top: 100%;
+        left: 0;
+
+        right:0;
+
+        & > div{
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 12px;
+
+            &:hover{
+                background: $gray;
+            }
+
+            .name{
+                align-self: start;
+            }
+            .username{
+                align-self: end;
+                font-size: 0.8rem;
+                color: darken($gray, 15%);
+            }
+
+        }
+    }
+
+    &__tags{
+        margin: 10px 0;
+        div{
+            float: left;
+            margin: 0 4px 4px 0;
+            padding: 4px 10px;
+            background: #42b983;
+            color: $white;
+            font-size: 14px;
+            border-radius: $multiselect-input-radius;
+
+            .close{
+                color: darken($green, 15%);
+                font-family: Arial, 'sans serif';
+                font-weight: 700;
+                padding-left: 4px;
+                cursor: pointer;
+            }
+        }
+    }
 }

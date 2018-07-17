@@ -1,4 +1,33 @@
-<div class="multiselect">
-  <input class="multiselect__input" />
-  <div class="multiselect__content-wrapper"></div>
+
+<div class="multiselect"
+     v-clickOut="close"
+>
+    <div class="multiselect__tags">
+        <div v-for="(value, key) of model">
+            {{ value.name }}
+            <span class="close" @click.stop="removeTag(key)">x</span>
+        </div>
+    </div>
+    <div >
+        <input class="multiselect__input"
+               :value="searchContent"
+               @input="search"
+               @focus="open"
+               @keyup.esc="close"
+               @keyup.enter="addFirstElement"
+        />
+        <div class="multiselect__content-wrapper" v-show="isOpen">
+            <div v-for="(value, key) of filteredList"
+                 @click="selectTag(value)"
+            >
+                <div class="name">{{value.name}}</div>
+                <div class="username">{{value.username}}</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--<Multiselect-tags></Multiselect-tags>-->
 </div>
