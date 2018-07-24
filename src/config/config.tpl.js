@@ -4,5 +4,5 @@ export default ({
     users: '/users',
     todos: '/todos',
     photos: '/photos',
-  }
-})
+  },
+});

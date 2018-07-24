@@ -1,9 +1,17 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <Multiselect></Multiselect>
-    {{ users }}
-  </div>
+    <div id="app">
+        <h4 class="text-center">Peut rechercher sur le nom et le pseudo</h4>
+
+        <div class="user-selector">
+            <Multiselect :source="users" :options="{debounceDuration: 1000}" :model="selected"></Multiselect>
+        </div>
+        <div>
+            <h4>Selected values:</h4>
+            <div v-for="{id,name} in selected">
+                <pre>{ id: {{id}}, name: {{name}} }</pre>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -22,16 +30,12 @@ export default {
   mounted() {
     this.$store.dispatch('get:users');
   },
+  data() {
+    return {
+      selected: [],
+    };
+  },
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./styles/app.scss" lang="scss"></style>
