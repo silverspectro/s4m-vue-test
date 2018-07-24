@@ -10,14 +10,14 @@
     </div>
     <div >
         <input class="multiselect__input"
-               :value="searchContent"
+               v-model="searchContent"
                @input="search"
                @focus="open"
                @keyup.esc="close"
                @keyup.enter="addFirstElement"
         />
         <div class="multiselect__content-wrapper" v-show="isOpen">
-            <div v-for="(value, key) of filteredList"
+            <div v-for="value of filteredList"
                  @click="selectTag(value)"
             >
                 <div class="name">{{value.name}}</div>

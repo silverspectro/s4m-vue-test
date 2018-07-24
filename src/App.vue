@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h4 class="text-center">Peut rechercher sur le nom et le pseudo</h4>
-        <pre>{{ users}}</pre>
+
         <div class="user-selector">
             <Multiselect :source="users" :options="{debounceDuration: 1000}" :model="selected"></Multiselect>
         </div>
